@@ -1,0 +1,18 @@
+ALGORITHM sentence
+VAR
+    count, words, vowels : INTEGER := 0;
+BEGIN
+    Read(sentence);
+    WHILE (sentence[count] <> '.') DO
+        IF (lowercase(sentence[count]) = 'a' OR lowercase(sentence[count]) = 'e' OR lowercase(sentence[count]) = 'i' OR lowercase(sentence[count]) = 'o' OR lowercase(sentence[count]) = 'u') THEN
+            vowels := vowels + 1;
+        END_IF
+        IF (sentence[count] = ' ') THEN
+            words := words +1;
+        END_IF
+        count := count + 1;
+    END_WHILE
+    Write("The length of the sentence = ", count + 1);
+    Write("The number of vowels in the sentence = ", vowels);
+    Write("The number of words in the sentence = ", words + 1);
+END
